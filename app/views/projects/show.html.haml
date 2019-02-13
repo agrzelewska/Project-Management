@@ -8,5 +8,8 @@
   %strong Description:
   = @project.description
 
+  #todo_items_wrapper= render @project.tasks
+  #form= render 'tasks/form'
+
 = link_to 'Edit', edit_project_path(@project) |
 = link_to 'Back', projects_path
