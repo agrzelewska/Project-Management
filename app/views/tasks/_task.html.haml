@@ -1,2 +1,16 @@
-%p= task.content
-= link_to 'Delete', project_task_path(@project, task.id), method: :delete, data: { confirm: 'Are you sure?' }
+.row.clearfix
+  - if task.completed?
+    .complete
+    = link_to 'Mark as complete', complete_project_task_path(@project, task.id), method: :patch
+    .task
+    %p{ style: 'opacity: 0.4;'}
+      %strike= task.content
+    .trash
+    = link_to 'Delete', project_task_path(@project, task.id), method: :delete, data: { confirm: 'Are you sure?' } 
+  - else
+    .complete
+    = link_to 'Mark as complete', complete_project_task_path(@project, task.id), method: :patch
+    .task
+    %p= task.content
+    .trash
+    = link_to 'Delete', project_task_path(@project, task.id), method: :delete, data: { confirm: 'Are you sure?' } 
