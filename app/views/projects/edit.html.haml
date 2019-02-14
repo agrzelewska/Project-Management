@@ -1,6 +1,7 @@
-%h1 Editing Project
+%h1.todo_list_title Editing Project
 
-= render 'form', project: @project
+.forms
+  = render 'form', project: @project
 
-= link_to 'Show', @project |
-= link_to 'Back', projects_path
+.links
+  = link_to 'Cancel', projects_path

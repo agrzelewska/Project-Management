@@ -1,5 +1,7 @@
-%h1 New Project
+%h1.todo_list_title New Project
 
-= render 'form', project: @project
+.forms
+  = render 'form', project: @project
 
-= link_to 'Back', projects_path
+.links
+  = link_to 'Back', projects_path
